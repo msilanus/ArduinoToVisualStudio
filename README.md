@@ -1,54 +1,5 @@
 # ArduinoToVisualStudio
-Connexion automatique d'une Arduino avec VisualStudio C#
-
-Ce programme permet de piloter la LED connectée sur D13 sur une Arduino (uno, mega, ...).
-
-Les mots de commandes disponibles sont :
-
-* ON     : Allumer la LED
-* OFF    : Eteindre la LED
-* STATUS : Demande le status de la LED
-
-Le code Arduino s'appui sur l'utilisation de la méthode readStringUntil() de l'objet Serial :
-
-```c++
-ordre = Serial.readStringUntil('\n');
-      
-if(ordre=="ON")  
-{
-	...
-}
-if(ordre=="OFF") 
-{
-    ...
-}
-if(ordre=="STATUS")
-{
-      ... 
-}
-```
-
-Le code C# utilise la classe ManagementObjectSearcher qui permet de rechercher une ressource précise au sein du système. Ici, on cherche les ports séries et leur description. On se connectera ensuite  à celui dont la description contion le mot "Arduino".
-
-* Espaces de nom à ajouter :
-
-
-	using System.Management;
-	using System.IO.Ports; 
-
-* Référence à ajouter au projet (Explorateur de solutions -> Références):
-
-
-	System.Management
-
-* Au chargement du formulaire, 
-   * rechercher les ports séries,
-   * rechercher le port de connexion de l'Arduino
-   * tenter de s'y connecter
-   * gérer les erreurs de connexion
-
-# ArduinoToVisualStudio
-Connexion automatique d'une Arduino avec VisualStudio C#
+## Connexion automatique d'une Arduino avec VisualStudio C# ##
 
 Ce programme permet de piloter la LED connectée sur D13 sur une Arduino (uno, mega, ...).
 
